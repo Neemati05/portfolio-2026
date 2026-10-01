@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Neemati M'chinda</title>
+<meta name="description" content="Contacter Neemati M'chinda pour un projet, un stage ou une alternance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@500;700&family=Bricolage+Grotesque:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/scrapbook.css">
+</head>
+<body class="scrap">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo-mn.png" alt="Logo mN" class="nav-logo-img">neemati</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero container" style="padding-bottom:24px;">
+    <div class="hero-kicker">Contact</div>
+    <h1 style="font-size:clamp(32px,5vw,54px);">Travaillons ensemble</h1>
+    <p class="hero-lede">Un projet créatif, une proposition de stage ou d'alternance ? Je suis disponible et à l'écoute.</p>
+  </section>
+
+  <section class="container contact-grid" style="padding-bottom:96px;">
+    <div class="contact-info">
+      <!-- MODIFIER LE LIEN -->
+      <a href="mailto:mchinda.neemati@gmail.com">✉ mchinda.neemati@gmail.com</a>
+      <!-- MODIFIER LE LIEN : URL LinkedIn réelle -->
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">in LinkedIn — Neemati M'chinda</a>
+      <p style="margin-top:24px;">Sarcelles, Île-de-France</p>
+    </div>
+
+    <form class="contact-form" data-contact-form>
+      <div class="field">
+        <label for="name">Nom</label>
+        <input id="name" name="name" type="text" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+      <p data-form-status style="margin-top:14px;font-size:13.5px;"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© 2026 — Neemati M'chinda</span>
+    <span>Sarcelles, Île-de-France</span>
+    <a href="mailto:mchinda.neemati@gmail.com">mchinda.neemati@gmail.com</a>
+  </div>
+</footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

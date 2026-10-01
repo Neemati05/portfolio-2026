@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Neemati M'chinda</title>
+<meta name="description" content="Parcours, formation et univers créatif de Neemati M'chinda, étudiante BUT MMI Création Numérique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@500;700&family=Bricolage+Grotesque:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/scrapbook.css">
+<style>
+  /* Section expériences (À propos) */
+  .exp-list{display:grid;gap:28px;margin-top:24px;}
+  .exp{background:#fff;padding:26px 28px;box-shadow:0 10px 22px rgba(0,0,0,0.12);}
+  .exp:nth-child(odd){rotate:-0.6deg;}
+  .exp:nth-child(even){rotate:0.6deg;}
+  .exp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;}
+  .exp-head h3{margin:0;}
+  .exp-when{
+    background:#F4D35E;color:#221F1B;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;
+    padding:5px 10px;border-radius:3px;rotate:2deg;box-shadow:0 3px 6px rgba(0,0,0,0.12);
+  }
+  .exp-org{font-weight:600;color:var(--ink);margin:2px 0 14px;}
+  .exp ul{display:grid;gap:8px;}
+  .exp li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink-soft);}
+  .exp li::before{content:"▸";position:absolute;left:0;color:#B23D74;}
+  .exp-link{display:inline-block;margin-top:16px;font-weight:600;font-size:14px;border-bottom:2px solid #FC7FB8;}
+</style>
+</head>
+<body class="scrap">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo-mn.png" alt="Logo mN" class="nav-logo-img">neemati</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="a-propos.html" class="active">À propos</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero container" style="padding-bottom:40px;">
+    <div class="hero-kicker">À propos</div>
+    <h1 style="font-size:clamp(32px,5vw,54px);">Neemati M'chinda</h1>
+  </section>
+
+  <section class="container about-grid" style="padding-bottom:96px;">
+    <div>
+      <!-- MODIFIER LA DESCRIPTION : texte issu du portfolio actuel -->
+      <p class="lead" style="font-size:17px;">Designer graphique passionnée par la création visuelle sous toutes ses formes — de l'affiche typographique à l'identité de marque complète, en passant par le motion design et la modélisation 3D.</p>
+      <p>Mes projets mêlent recherche artistique, sens du détail et maîtrise technique. Chaque création est pensée pour transmettre une émotion ou une idée forte.</p>
+
+      <h3 style="margin-top:32px;">Formation</h3>
+      <!-- MODIFIER : détails de formation à compléter -->
+      <p>Étudiante en 3ᵉ année de BUT Métiers du Multimédia et de l'Internet (MMI), parcours Création Numérique à l'IUT Sénart-Fontainebleau.</p>
+
+      <h3 style="margin-top:32px;">Domaines de prédilection</h3>
+      <div class="skills-list">
+        <span class="tag">Design &amp; direction artistique</span>
+        <span class="tag">Illustration &amp; identité</span>
+        <span class="tag">Animation &amp; motion</span>
+        <span class="tag">Modélisation 3D</span>
+      </div>
+
+      <h3 style="margin-top:32px;">Objectifs</h3>
+      <!-- MODIFIER : à compléter avec tes objectifs réels (stage, alternance, secteur visé...) -->
+      <p>À la recherche d'un stage ou d'une alternance dans le domaine du design graphique et de la création digitale.</p>
+    </div>
+    <div class="about-photo"><img src="assets/images/portrait.jpg" alt="Portrait de Neemati M'chinda"></div>
+  </section>
+
+  <section class="container">
+    <div class="hero-kicker">Mon parcours</div>
+    <h2>Mes expériences</h2>
+    <div class="exp-list">
+
+      <article class="exp">
+        <div class="exp-head">
+          <h3>Chargée de communication</h3>
+          <span class="exp-when">Stage · 2024 · 1 mois et demi</span>
+        </div>
+        <div class="exp-org">SOS Racisme — Paris</div>
+        <ul>
+          <li>Création de contenus pour les réseaux sociaux : posts, stories, visuels militants (Instagram, Twitter/X, Facebook).</li>
+          <li>Conception et rédaction de supports de communication : affiches, textes militants, newsletters.</li>
+          <li>Participation à la conception de campagnes de sensibilisation antiracistes.</li>
+          <li>Veille quotidienne sur l'actualité sociale, politique et culturelle pour alimenter la ligne éditoriale.</li>
+          <li>Contribution à l'organisation d'événements et d'actions militantes (logistique, communication événementielle).</li>
+        </ul>
+      </article>
+
+      <article class="exp">
+        <div class="exp-head">
+          <h3>Création d'une marque fictive — Brasserie</h3>
+          <span class="exp-when">Projet universitaire · 2024 · 3 mois</span>
+        </div>
+        <div class="exp-org">IUT Sénart-Fontainebleau</div>
+        <ul>
+          <li>Conception et développement d'un site web complet (UX/UI, intégration HTML/CSS).</li>
+          <li>Création de l'identité visuelle complète : logotype, charte graphique, maquettes.</li>
+          <li>Élaboration de la stratégie de communication digitale et print.</li>
+          <li>Production de contenus pour les réseaux sociaux adaptés à la cible.</li>
+          <li>Coordination du projet en équipe, dans le respect des délais et des jalons.</li>
+        </ul>
+        <a href="projets/calufa-beer.html" class="exp-link">Voir le projet Calufa Beer →</a>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© 2026 — Neemati M'chinda</span>
+    <span>Sarcelles, Île-de-France</span>
+    <a href="mailto:mchinda.neemati@gmail.com">mchinda.neemati@gmail.com</a>
+  </div>
+</footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
