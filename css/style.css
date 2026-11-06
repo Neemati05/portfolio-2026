@@ -1,0 +1,245 @@
+/* ==========================================================================
+   NEEMATI M'CHINDA — PORTFOLIO
+   style.css — design system principal
+   Les variables ci-dessous pilotent TOUTES les couleurs/typos du site.
+   ========================================================================== */
+
+/* MODIFIER LES COULEURS ICI */
+:root{
+  --ink:#1B1A1A;           /* texte principal */
+  --ink-soft:#4A4844;      /* texte secondaire */
+  --paper:#FAF8F4;         /* fond principal */
+  --paper-alt:#F1EEE7;     /* fond alterné (sections) */
+  --surface:#FFFFFF;       /* cartes */
+  --line:rgba(27,26,26,0.12);
+  --accent:#FC7FB8;        /* rose du logo personnel "mN" — couleur réelle extraite du logo */
+  --accent-ink:#5C1030;    /* rose foncé pour le texte sur accent clair */
+  --focus:#1B1A1A;
+
+  --font-display:'Bricolage Grotesque', sans-serif;
+  --font-body:'Inter', sans-serif;
+
+  --container:1180px;
+  --radius:2px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:90px;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;margin:0 0 .5em;line-height:1.05;letter-spacing:-0.01em;}
+p{margin:0 0 1em;color:var(--ink-soft);}
+ul{margin:0;padding:0;list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+.section{padding:96px 0;}
+.section-alt{background:var(--paper-alt);}
+.section-head{margin-bottom:48px;max-width:640px;}
+.eyebrow{
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:12.5px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--accent-ink);
+  display:inline-block;
+  margin-bottom:14px;
+}
+
+/* focus visibility for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+}
+
+/* --------------------------------------------------------------------
+   HEADER / NAVIGATION
+   -------------------------------------------------------------------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,248,244,0.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;max-width:var(--container);margin:0 auto;
+}
+.nav-logo{font-family:var(--font-display);font-weight:700;font-size:20px;display:flex;align-items:center;gap:8px;}
+.nav-logo-img{height:26px;width:auto;display:block;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:32px;font-size:14.5px;font-weight:500;}
+.nav-links a{position:relative;padding:4px 0;}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);
+  transition:width .25s ease;
+}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-toggle{display:none;background:none;border:none;padding:6px;}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:.25s;}
+
+/* --------------------------------------------------------------------
+   BOUTONS
+   -------------------------------------------------------------------- */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-body);font-weight:600;font-size:14.5px;
+  padding:13px 26px;border-radius:999px;border:1.5px solid var(--ink);
+  transition:transform .2s ease, background .2s ease, color .2s ease;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--ink);color:var(--paper);}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);}
+.btn-ghost{background:transparent;color:var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);}
+.btn-sm{padding:9px 18px;font-size:13px;}
+
+/* --------------------------------------------------------------------
+   HERO (homepage)
+   -------------------------------------------------------------------- */
+.hero{padding:110px 0 90px;}
+.hero-kicker{font-size:15px;font-weight:600;color:var(--accent-ink);margin-bottom:18px;}
+.hero h1{font-size:clamp(38px,6vw,74px);max-width:16ch;}
+.hero-lede{font-size:19px;max-width:52ch;margin-top:20px;}
+.hero-cta{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px;}
+.tag{
+  font-size:12.5px;font-weight:600;padding:7px 14px;border:1px solid var(--line);
+  border-radius:999px;color:var(--ink-soft);background:var(--surface);
+}
+
+/* --------------------------------------------------------------------
+   GRILLE PROJETS
+   -------------------------------------------------------------------- */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;}
+.filter-btn{
+  font-size:13.5px;font-weight:600;padding:9px 18px;border-radius:999px;
+  border:1.5px solid var(--line);background:var(--surface);color:var(--ink-soft);
+}
+.filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;}
+.project-card{
+  background:var(--surface);border:1px solid var(--line);overflow:hidden;
+  display:flex;flex-direction:column;
+  opacity:0;transform:translateY(18px);
+  transition:opacity .6s ease, transform .6s ease, box-shadow .25s ease;
+}
+.project-card.in-view{opacity:1;transform:translateY(0);}
+.project-card:hover{box-shadow:0 18px 40px rgba(27,26,26,0.08);}
+.card-media{
+  aspect-ratio:4/3;background:var(--paper-alt);
+  display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--line);
+  color:var(--ink-soft);font-size:12.5px;text-align:center;padding:16px;
+  overflow:hidden;
+}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.card-media.placeholder{background:repeating-linear-gradient(135deg, var(--paper-alt), var(--paper-alt) 10px, var(--surface) 10px, var(--surface) 20px);padding:16px;}
+.card-body{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.card-meta{font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent-ink);}
+.card-title{font-family:var(--font-display);font-size:20px;font-weight:700;}
+.card-desc{font-size:14px;flex:1;}
+.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:13px;color:var(--ink-soft);}
+
+/* --------------------------------------------------------------------
+   PAGE PROJET — hero + sections
+   -------------------------------------------------------------------- */
+.project-hero{padding:64px 0 48px;border-bottom:1px solid var(--line);}
+.project-hero .eyebrow{margin-bottom:10px;}
+.project-hero h1{font-size:clamp(32px,5vw,56px);}
+.project-hero .meta-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px;font-size:14px;color:var(--ink-soft);}
+.project-hero .meta-row strong{color:var(--ink);}
+.media-hero{
+  margin-top:36px;aspect-ratio:16/8;background:var(--paper-alt);
+  border:1px dashed var(--line);
+  display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:14px;text-align:center;
+}
+.project-section{padding:56px 0;border-bottom:1px solid var(--line);}
+.project-section:last-of-type{border-bottom:none;}
+.project-section h2{font-size:26px;margin-bottom:18px;}
+.project-section .lead{font-size:16.5px;max-width:68ch;}
+.media-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px;}
+.media-slot{
+  aspect-ratio:4/3;background:var(--paper-alt);border:1px dashed var(--line);
+  display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:12.5px;text-align:center;padding:14px;
+}
+.media-hero img, .media-slot img, .media-row > div img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.media-row > div{background:var(--paper-alt);border:1px solid var(--line);overflow:hidden;min-height:120px;}
+.media-row > div.media-slot{border-style:dashed;}
+.skills-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+.project-nav{display:flex;justify-content:space-between;padding:48px 0;}
+
+/* --------------------------------------------------------------------
+   À PROPOS / COMPÉTENCES
+   -------------------------------------------------------------------- */
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:start;}
+.about-photo{
+  aspect-ratio:3/4;background:var(--paper-alt);border:1px dashed var(--line);
+  display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:13px;text-align:center;
+}
+.skill-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+.skill-cat{background:var(--surface);border:1px solid var(--line);padding:26px;}
+.skill-cat h3{font-size:16px;margin-bottom:14px;}
+.skill-cat ul li{font-size:14.5px;color:var(--ink-soft);padding:5px 0;border-top:1px solid var(--line);}
+.skill-cat ul li:first-child{border-top:none;}
+
+/* --------------------------------------------------------------------
+   CONTACT
+   -------------------------------------------------------------------- */
+.contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;}
+.contact-info a{display:flex;align-items:center;gap:10px;font-weight:600;margin-bottom:14px;}
+.contact-info a:hover{color:var(--accent-ink);}
+.field{margin-bottom:20px;}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;}
+.field input,.field textarea{
+  width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:var(--radius);
+  font-family:var(--font-body);font-size:14.5px;background:var(--surface);color:var(--ink);
+}
+.field textarea{min-height:130px;resize:vertical;}
+
+/* --------------------------------------------------------------------
+   FOOTER
+   -------------------------------------------------------------------- */
+.site-footer{border-top:1px solid var(--line);padding:40px 0;}
+.footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--ink-soft);}
+
+/* --------------------------------------------------------------------
+   UTILITAIRES
+   -------------------------------------------------------------------- */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+.mt-0{margin-top:0;}
+
+/* ---------- Affiches : affichage complet + zoom plein écran ---------- */
+.media-poster{
+  margin-top:36px;padding:32px 20px;background:var(--paper-alt);border:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+}
+.media-poster img{
+  display:block;width:auto;max-width:min(100%,520px);height:auto;
+  box-shadow:0 12px 36px rgba(0,0,0,0.18);cursor:zoom-in;transition:transform .25s ease;
+}
+.media-poster img:hover{transform:scale(1.015);}
+.media-poster .poster-hint{font-size:13px;color:var(--ink-soft);}
+
+.lightbox{
+  position:fixed;inset:0;z-index:1000;background:rgba(15,15,15,0.94);
+  overflow:auto;display:none;cursor:zoom-out;padding:56px 16px 32px;
+}
+.lightbox.open{display:block;}
+.lightbox img{display:block;margin:0 auto;max-width:min(100%,1000px);height:auto;}
+.lightbox-close{
+  position:fixed;top:14px;right:18px;z-index:1001;width:42px;height:42px;border-radius:50%;
+  border:1px solid rgba(255,255,255,0.4);background:rgba(0,0,0,0.5);color:#fff;font-size:22px;line-height:1;cursor:pointer;
+}

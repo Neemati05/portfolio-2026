@@ -1,0 +1,104 @@
+/* ==========================================================================
+   scrapbook.css — identité visuelle "collage / carnet" (inspirée de la page d'accueil)
+   Appliquée aux pages intérieures via <body class="scrap">.
+   Fond taupe · feuilles crème scotchées · titres rose feutre · notes manuscrites.
+   ========================================================================== */
+body.scrap{
+  --taupe:#C9BEAF; --cream:#F3EDE1; --pink:#FC7FB8; --pink-soft:#FBD3E5; --pink-deep:#B23D74; --yellow:#F4D35E;
+  --font-script:'Permanent Marker',cursive; --font-hand:'Caveat',cursive;
+  background:var(--taupe);
+}
+
+/* ---------- En-tête & pied de page ---------- */
+.scrap .site-header{background:rgba(201,190,175,0.92);border-bottom:none;}
+.scrap .nav-links a::after{background:var(--pink-deep);}
+.scrap .nav-logo{color:var(--ink);}
+.scrap .site-footer{border:none;padding:24px 0 36px;}
+.scrap .footer-row{justify-content:center;text-align:center;font-family:var(--font-hand);font-size:17px;color:var(--ink-soft);}
+
+/* ---------- Chaque section = une feuille crème scotchée ---------- */
+.scrap main{padding:36px 24px 40px;}
+.scrap main > section{
+  position:relative;max-width:1040px;margin:0 auto 48px;
+  padding:52px 56px !important;background:var(--cream);border:none;border-radius:6px;
+  box-shadow:0 18px 40px rgba(34,31,27,0.18);
+}
+.scrap main > section:nth-of-type(odd){rotate:-0.5deg;}
+.scrap main > section:nth-of-type(even){rotate:0.5deg;}
+.scrap main > section::before{
+  content:"";position:absolute;top:-13px;left:56px;width:90px;height:27px;rotate:-6deg;
+  background:rgba(255,255,255,0.55);border:1px solid rgba(0,0,0,0.06);box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.scrap main > section:nth-of-type(even)::before{left:auto;right:56px;rotate:5deg;}
+.scrap .project-nav{max-width:1040px;margin:0 auto;padding:8px 24px 32px;}
+
+/* ---------- Typographie ---------- */
+.scrap .hero h1,.scrap .project-hero h1{
+  font-family:var(--font-script);font-weight:400;line-height:1;letter-spacing:0;max-width:none;
+  color:var(--pink);-webkit-text-stroke:1.2px var(--pink-deep);
+}
+.scrap h2{font-weight:800;letter-spacing:-0.03em;}
+.scrap .project-section h2{font-size:clamp(26px,4vw,36px);}
+.scrap h3{font-family:var(--font-hand);font-size:28px;font-weight:700;color:var(--pink-deep);letter-spacing:0;}
+.scrap .hero-kicker,.scrap .eyebrow{
+  font-family:var(--font-hand);font-size:26px;font-weight:500;letter-spacing:0;text-transform:none;
+  color:var(--ink-soft);display:inline-block;rotate:-2deg;margin-bottom:8px;
+}
+.scrap .project-hero{border:none;}
+.scrap .project-section{border:none;}
+
+/* ---------- Tags, boutons, filtres ---------- */
+.scrap .tag{border:none;background:var(--pink-soft);color:var(--pink-deep);rotate:-2deg;}
+.scrap .tag:nth-child(even){rotate:2deg;background:var(--yellow);color:var(--ink);}
+.scrap .btn-primary{background:var(--ink);color:var(--cream);}
+.scrap .btn-primary:hover{background:var(--pink);border-color:var(--ink);color:var(--ink);}
+.scrap .btn-ghost:hover{background:var(--ink);color:var(--cream);}
+.scrap .filter-btn{background:#fff;border:1.5px solid var(--ink);color:var(--ink);}
+.scrap .filter-btn.active{background:var(--pink);color:var(--ink);}
+
+/* ---------- Cartes projets = polaroïds ---------- */
+.scrap .project-card{background:#fff;border:none;padding:10px 10px 6px;box-shadow:0 10px 22px rgba(0,0,0,0.12);}
+.scrap .project-card:nth-child(odd){rotate:-1.3deg;}
+.scrap .project-card:nth-child(even){rotate:1.2deg;}
+.scrap .project-card:hover{box-shadow:0 16px 32px rgba(0,0,0,0.18);}
+.scrap .card-media{border:none;background:#E4DCCD;}
+.scrap .card-title{font-family:var(--font-hand);font-size:27px;font-weight:700;}
+.scrap .card-meta{
+  align-self:flex-start;background:var(--yellow);color:var(--ink);padding:3px 9px;border-radius:3px;
+  rotate:-3deg;letter-spacing:0.05em;box-shadow:0 3px 6px rgba(0,0,0,0.12);
+}
+
+/* ---------- Médias des pages projet ---------- */
+.scrap .media-hero,.scrap .media-poster{background:#fff;border:none;padding:10px;box-shadow:0 12px 28px rgba(0,0,0,0.14);}
+.scrap .media-poster{background:var(--pink-soft);padding:32px 20px;}
+.scrap .media-poster img{border:8px solid #fff;}
+.scrap .media-poster .poster-hint{font-family:var(--font-hand);font-size:20px;color:var(--pink-deep);}
+.scrap .media-row > div{background:#fff;border:none;padding:8px;box-shadow:0 10px 22px rgba(0,0,0,0.12);}
+.scrap .media-row > div:nth-child(odd){rotate:-1deg;}
+.scrap .media-row > div:nth-child(even){rotate:1deg;}
+.scrap .media-slot{background:var(--pink-soft);border:2px dashed var(--pink-deep);color:var(--pink-deep);font-family:var(--font-hand);font-size:17px;}
+
+/* ---------- À propos / Compétences / Contact ---------- */
+.scrap .about-photo{
+  border:none;rotate:3deg;box-shadow:0 12px 26px rgba(0,0,0,0.2);color:var(--pink-deep);
+  font-family:var(--font-hand);font-size:20px;padding:12px;
+  background:radial-gradient(circle,rgba(34,31,27,0.45) 1px,transparent 1.4px) 0 0/8px 8px,var(--pink-soft);
+}
+.scrap .skill-cat{background:#fff;border:none;box-shadow:0 10px 22px rgba(0,0,0,0.12);}
+.scrap .skill-cat:nth-child(odd){rotate:-1.2deg;}
+.scrap .skill-cat:nth-child(even){rotate:1.2deg;}
+.scrap .skill-cat ul li{border-top:1px dashed rgba(34,31,27,0.2);}
+.scrap .contact-info a:hover{color:var(--pink-deep);}
+.scrap .field label{font-family:var(--font-hand);font-size:21px;font-weight:700;color:var(--pink-deep);}
+.scrap .field input,.scrap .field textarea{background:#fff;border:none;border-bottom:2px solid var(--ink);border-radius:4px;box-shadow:0 4px 10px rgba(0,0,0,0.08);}
+.scrap .field input:focus,.scrap .field textarea:focus{outline:none;border-bottom-color:var(--pink-deep);}
+
+/* ---------- Mobile ---------- */
+@media (max-width:760px){
+  .scrap main{padding:24px 14px 24px;}
+  .scrap main > section{padding:36px 22px !important;}
+  .scrap main > section::before{left:24px;}
+  .scrap main > section:nth-of-type(even)::before{right:24px;}
+  .scrap .nav-links{background:var(--cream);}
+  .scrap .project-nav{flex-wrap:wrap;gap:12px;}
+}
